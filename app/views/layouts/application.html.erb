@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <header>
+      <div class="container">
+        <%= link_to "JIT APP", '#',id:"logo"%>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "sign_in",new_user_session_path %></li>
+            <li></li>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
