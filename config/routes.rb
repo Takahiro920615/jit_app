@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'top_page/top'
+  get 'users/new'
+  root 'top_page#top'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -10,5 +11,6 @@ devise_for :users, controllers: {
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

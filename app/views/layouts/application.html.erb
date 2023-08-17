@@ -16,8 +16,12 @@
         <%= link_to "JIT APP", '#',id:"logo"%>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "sign_in",new_user_session_path %></li>
-            <li></li>
+            <% if user_signed_in?%>
+               <li><%= link_to "sign_out",destroy_user_session_path,method: :delete %></li>
+            <% else %>
+              <li><%= link_to "sign_in",new_user_session_path %></li>
+            <% end %>
+            
         </nav>
       </div>
     </header>
