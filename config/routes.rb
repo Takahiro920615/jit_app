@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'users/new'
   root 'top_page#top'
+  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
