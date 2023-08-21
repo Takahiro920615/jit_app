@@ -16,6 +16,9 @@ class Devise::RegistrationsController < DeviseController
   def create
     build_resource(sign_up_params)
 
+    # nameカラムもインサートさせるために1行追加
+    resource.name = sign_up_params[:name]
+
     resource.save
     yield resource if block_given?
     if resource.persisted?
