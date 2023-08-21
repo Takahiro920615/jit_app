@@ -12,9 +12,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super do |resource|
-      # resource.name =params[:user][:name]
-      # resource.save
+      if resource.email.present?
       UserMailer.registration_confirmation(resource).deliver_now
+      end
     end
   end
 

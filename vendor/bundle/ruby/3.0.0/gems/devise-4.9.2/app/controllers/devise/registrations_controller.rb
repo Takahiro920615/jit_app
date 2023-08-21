@@ -15,10 +15,8 @@ class Devise::RegistrationsController < DeviseController
   # POST /resource
   def create
     build_resource(sign_up_params)
-
     # nameカラムもインサートさせるために1行追加
     resource.name = sign_up_params[:name]
-
     resource.save
     yield resource if block_given?
     if resource.persisted?
@@ -139,7 +137,7 @@ class Devise::RegistrationsController < DeviseController
   def sign_up_params
     devise_parameter_sanitizer.sanitize(:sign_up)
   end
-
+  
   def account_update_params
     devise_parameter_sanitizer.sanitize(:account_update)
   end
