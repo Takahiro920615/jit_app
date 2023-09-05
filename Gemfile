@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'letter_opener_web'
 gem 'bootstrap'
+gem 'rails-i18n'
+gem 'devise-i18n-views'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

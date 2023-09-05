@@ -1,0 +1,40 @@
+ja:
+  devise:
+    confirmations:
+      confirmed: "アカウントが確認されました。"
+      unconfirmed: "アカウントはまだ確認されていません。"
+    failure:
+      already_authenticated: "すでにログインしています。"
+      unauthenticated: "このアクションを実行するためにはログインしてください。"
+      unconfirmed: "アカウントが未確認です。確認メールを確認してください。"
+      locked: "アカウントがロックされています。管理者に問い合わせてください。"
+      invalid: "無効なメールアドレスまたはパスワードです。"
+      invalid_token: "無効なトークンです。"
+    mailer:
+      confirmation_instructions:
+        subject: "アカウントの確認手順"
+      reset_password_instructions:
+        subject: "パスワードのリセット手順"
+      unlock_instructions:
+        subject: "アカウントのロック解除手順"
+    omniauth_callbacks:
+      failure: "OAuth認証に失敗しました。"
+    passwords:
+      updated: "パスワードが更新されました。"
+    registrations:
+      signed_up: "アカウントが登録されました。"
+      signed_up_but_inactive: "アカウントが登録されましたが、まだ有効化されていません。"
+      signed_up_but_locked: "アカウントが登録されましたが、ロックされています。"
+      signed_up_but_unconfirmed: "アカウントが登録されましたが、未確認です。"
+      update_needs_confirmation: "アカウント情報が更新されました。確認メールを確認してください。"
+      destroyed: "アカウントが削除されました。"
+    sessions:
+      signed_in: "ログインしました。"
+      signed_out: "ログアウトしました。"
+    unlocks:
+      send_instructions: "アカウントのロック解除手順を送信しました。"
+      unlocked: "アカウントがロック解除されました。"
+  
+
+
+
