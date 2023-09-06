@@ -1,4 +1,4 @@
-<% provide(:button_text, 'ログイン') %>
+<%# <% provide(:button_text, 'ログイン') %>
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,7 +22,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit yield(:button_text), class:"btn btn-primary" %>
+    <%= f.submit t('devise.registrations.new.log_in'), class:"btn btn-primary"%>
   </div>
 <% end %>
 
