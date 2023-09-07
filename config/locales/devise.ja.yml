@@ -1,6 +1,10 @@
 ja:
   devise:
+    errors:
+        not_saved: "保存に失敗しました。以下のエラーを修正してください："
     confirmations:
+      new:
+        resend_confirmation_instructions:"アカウント確認メールを再送"
       confirmed: "アカウントが確認されました。"
       unconfirmed: "アカウントはまだ確認されていません。"
       resend_confirmation_instructions: "アカウント確認メール送信"
@@ -21,12 +25,17 @@ ja:
     omniauth_callbacks:
       failure: "OAuth認証に失敗しました。"
     passwords:
+      new:
+        send_me_reset_password_instructions:"パスワードの再設定メールを送信する"
+      edit:
+        change_my_password: "更新"
       updated: "パスワードが更新されました。"
       send_me_reset_password_instructions: "パスワードの再設定メールを送信する。"
       change_my_password: "パスワードを変更する"
     registrations:
-      cancel_my_account: "アカウントを削除"
-      update: "更新"
+      edit:
+        update: "更新"
+        cancel_my_account: "アカウントを削除"
       sign_up: "アカウントの登録"
       signed_up: "アカウントが登録されました。"
       signed_up_but_inactive: "アカウントが登録されましたが、まだ有効化されていません。"
@@ -35,14 +44,23 @@ ja:
       update_needs_confirmation: "アカウント情報が更新されました。確認メールを確認してください。"
       destroyed: "アカウントが削除されました。"
       new:
+        sign_up: "新規登録"
         log_in: "ログイン"
         Name: "名前"
     sessions:
+      new:
+        sign_in: "ログイン"
       signed_in: "ログインしました。"
       signed_out: "ログアウトしました。"
     unlocks:
       send_instructions: "アカウントのロック解除手順を送信しました。"
       unlocked: "アカウントがロック解除されました。"
+ja:
+  errors:
+    messages:
+      not_saved: "保存できませんでした"
+
+
     
     
         
