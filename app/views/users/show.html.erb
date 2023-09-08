@@ -1,4 +1,6 @@
-<div class = "container">
-<%= @user.name%><br>
-<%= @user.email%>
+<div class="container">
+  <h1>Dash Bords</h1>
+  <h5><%= @user.name %><br></h5>
+      <%= link_to "編集", edit_user_registration_path, class: "btn btn-block btn-primary custom-btn", style: "margin-bottom: 10px;" %><br>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-block btn-warning custom-btn" %>
 </div>
