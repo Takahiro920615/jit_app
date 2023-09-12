@@ -1,7 +1,5 @@
 ja:
   devise:
-    errors:
-        not_saved: "保存に失敗しました。以下のエラーを修正してください："
     confirmations:
       new:
         resend_confirmation_instructions:"アカウント確認メールを再送"
@@ -36,6 +34,8 @@ ja:
       edit:
         update: "更新"
         cancel_my_account: "アカウントを削除"
+      new:
+        name: "名前"
       sign_up: "アカウントの登録"
       signed_up: "アカウントが登録されました。"
       signed_up_but_inactive: "アカウントが登録されましたが、まだ有効化されていません。"
@@ -58,7 +58,8 @@ ja:
 ja:
   errors:
     messages:
-      not_saved: "保存できませんでした"
+      name: "名前"
+      not_saved: "保存に失敗しました。以下のエラーを修正してください："
 
 
     

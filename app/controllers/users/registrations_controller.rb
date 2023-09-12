@@ -5,9 +5,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
   def create
@@ -70,4 +70,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  protected
+  def after_inactive_sign_up_path_for(resource)
+    if resource.errors.include?(:name)
+      flash[:alert] = "名前を入力してください。"
+    end
+    super(resource)
+  end
 end

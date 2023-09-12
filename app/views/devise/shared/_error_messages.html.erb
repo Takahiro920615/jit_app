@@ -8,6 +8,8 @@
     </h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
+        <% if message == "Nameを入力してください"%>
+          <li><%= t('errors.messages.name')%></li>
         <li><%= message %></li>
       <% end %>
     </ul>
