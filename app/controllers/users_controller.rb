@@ -10,6 +10,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  
+
   # private
   #  def load_user
   #   @user = User.find(params[:id])

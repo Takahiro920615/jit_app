@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'users/new'
   root 'top_page#top'
+  
 
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
   devise_for :admins, controllers: {
@@ -11,12 +12,16 @@ Rails.application.routes.draw do
 devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations'
   }
 
-  devise_scope :user do
-    get 'users/confirmation/new', to: 'users/confirmations#new', as: :new_user_confirmation
-  end
+
+
+  # devise_scope :user do
+  #   get 'users/confirmation/new', to: 'users/confirmations#new'
+  #   post 'users/confirmation', to: 'users/confirmations#create'
+  # end
 
   resources :users 
   
