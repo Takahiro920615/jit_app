@@ -23,7 +23,8 @@ devise_for :users, controllers: {
   #   post 'users/confirmation', to: 'users/confirmations#create'
   # end
 
-  resources :users 
-  
+  resources :users do
+    resources :articles, only: [:new, :show, :index, :create,  :edit, :update, :destroy]
+  end  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
