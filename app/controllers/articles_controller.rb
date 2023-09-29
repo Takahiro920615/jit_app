@@ -7,7 +7,13 @@ class ArticlesController < ApplicationController
   def create
     user = User.find(params[:user_id])
     @article = user.articles.build(article_params)
-    #article.saveがfalseになっている。
+
+    if params[:article][:image].present?
+      @article.image.attach(params[:article][:image])
+      
+    else
+      @article.image = 'article_images/images.png'
+    end
       @article.save 
       redirect_to user_articles_url(user)
   end
@@ -20,7 +26,7 @@ class ArticlesController < ApplicationController
   end
   
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :content, :image)
   end
 
 end

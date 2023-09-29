@@ -3,6 +3,12 @@
 <% @articles.each do |article|%>
   <%= article.title%><br>
   <%= article.content%><br>
-  <%= article.image%>
+
+  <% if article.image.present? %>
+   <img src="<%= url_for(article.image) %>" alt="Article Image"><br>
+  <% else %>
+    <img src= "/article_images/images.png" alt="Article Image"><br>
+  <% end %>
+
 <% end %>
 </div>
