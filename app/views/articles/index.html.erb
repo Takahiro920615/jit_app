@@ -22,7 +22,7 @@
   </td>
   <td>
     <%= link_to "編集", "#", class:"btn btn-success"%>
-    <%= link_to "削除", "#", class:"btn btn-danger"%>
+    <%= link_to "削除", user_article_path(@user, article),method: :delete, class:"btn btn-danger"%>
   </td>
  </tr>
 <% end %>

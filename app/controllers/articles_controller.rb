@@ -19,10 +19,12 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    @user = User.find(params[:user_id])
     @articles = Article.all
   end
 
   def show
+    # user = User.find(params[:user_id])
     @article = Article.find(params[:id])
   end
 
@@ -46,6 +48,18 @@ class ArticlesController < ApplicationController
       redirect_to user_articles_url(user)
     else render 'edit'
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @article = @user.articles.find(params[:id])
+    if @article.destroy
+      flash[:success]="投稿を削除しました"
+      redirect_to user_articles_path(@user)
+    else
+      redirect_to user_articles_path(@user)
+    end
+
   end
 
   
