@@ -1,14 +1,30 @@
-<h1>投稿一覧ページ</h1>
+<h1>記事一覧</h1>
 <div class = "container">
 <% @articles.each do |article|%>
-  <%= article.title%><br>
-  <%= article.content%><br>
-
+<table class = "table">
+ <tr>
+   <td>詳細表示</td>
+   <td>タイトル</td>
+   <td>内容</td>
+   <td>画像</td>
+   <td>編集・削除</td>
+ </tr>
+ <tr>
+ <td></td>
+  <td><%= article.title%></td>
+  <td><%= article.content%></td>
+  <td>
   <% if article.image.present? %>
    <img src="<%= url_for(article.image) %>" alt="Article Image"><br>
   <% else %>
     <img src= "/article_images/images.png" alt="Article Image"><br>
   <% end %>
-
+  </td>
+  <td>
+    <%= link_to "編集", "#", class:"btn btn-success"%>
+    <%= link_to "削除", "#", class:"btn btn-danger"%>
+  </td>
+ </tr>
 <% end %>
+</table>
 </div>

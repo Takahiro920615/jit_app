@@ -1,0 +1,18 @@
+<h1><%= "#{@article.title}の投稿ページ"%></h1>
+
+<table class = "table table-bordered user-table">
+  <tr>
+    <td>内容</td>
+    <td>画像</td>
+  </tr>
+  <tr>
+  <td><%= @article.content%></td>
+  <td>
+    <% if @article.image.attached?%>
+      <%= image_tag @article.image %>
+    <%else%>
+      <img src= "/article_images/images.png" alt="Article Image"><br>
+    <% end %>
+  </td>
+  </tr>
+</div>
