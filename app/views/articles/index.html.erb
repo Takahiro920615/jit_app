@@ -1,30 +1,35 @@
 <h1>記事一覧</h1>
+<%= link_to "記事新規登録",new_user_article_path, class:"btn btn-primary"%>
 <div class = "container">
-<% @articles.each do |article|%>
 <table class = "table">
- <tr>
-   <td>詳細表示</td>
-   <td>タイトル</td>
-   <td>内容</td>
-   <td>画像</td>
-   <td>編集・削除</td>
- </tr>
- <tr>
- <td><%= link_to "詳細表示", user_article_path(@user, article), class:"btn btn-success" %></td>
-  <td><%= article.title%></td>
-  <td><%= article.content%></td>
-  <td>
-  <% if article.image.present? %>
-   <img src="<%= url_for(article.image) %>" alt="Article Image"><br>
-  <% else %>
-    <img src= "/article_images/images.png" alt="Article Image"><br>
-  <% end %>
-  </td>
-  <td>
-    <%= link_to "編集",edit_user_article_path(@user, article), class:"btn btn-success"%>
-    <%= link_to "削除", user_article_path(@user, article),method: :delete, class:"btn btn-danger"%>
-  </td>
- </tr>
+  <thead  class="table-divider">
+    <tr>
+      <th>詳細表示</th>
+      <th>タイトル</th>
+      <th>内容</th>
+      <th>画像</th>
+      <th>編集・削除</th>
+    </tr>
+  </thead>
+<% @articles.each do |article|%>
+  <tbody>
+    <tr>
+      <td><%= link_to "詳細表示", user_article_path(@user, article), class:"btn btn-success" %></td>
+        <td><%= article.title%></td>
+        <td><%= article.content%></td>
+        <td>
+        <% if article.image.present? %>
+        <img src="<%= url_for(article.image) %>" alt="Article Image"><br>
+        <% else %>
+          <img src= "/article_images/images.png" alt="Article Image"><br>
+        <% end %>
+        </td>
+        <td>
+          <%= link_to "編集",edit_user_article_path(@user, article), class:"btn btn-success"%>
+          <%= link_to "削除", user_article_path(@user, article),method: :delete, class:"btn btn-danger"%>
+        </td>
+    </tr>
+  </tbody>
 <% end %>
 </table>
 </div>

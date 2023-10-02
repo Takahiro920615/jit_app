@@ -1,11 +1,16 @@
-<h1><%= "#{@article.title}の投稿ページ"%></h1>
+<h1>記事詳細</h1>
 
-<table class = "table table-bordered user-table">
+<table class = "table">
+<thead class="table-divider">
   <tr>
-    <td>内容</td>
-    <td>画像</td>
+    <th>タイトル</th>
+    <th>内容</th>
+    <th>画像</th>
   </tr>
+  </thead>
+  <tbody>
   <tr>
+  <td><%="#{@article.title}"%></td>
   <td><%= @article.content%></td>
   <td>
     <% if @article.image.attached?%>
@@ -15,4 +20,10 @@
     <% end %>
   </td>
   </tr>
+  </tbody>
 </div>
+</table>
+<%= link_to "編集",edit_user_article_path(@user, @article), class:"btn btn-success"%>
+<%= link_to "削除", user_article_path(@user, @article),method: :delete, class:"btn btn-danger"%><br>
+
+<%= link_to "記事一覧へ戻る",user_articles_path(@user), class:"btn btn-primary ", style: "margin-top: 10px;"%>

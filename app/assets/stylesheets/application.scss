@@ -16,6 +16,10 @@
  */
 
  .container{
+   padding-top: 50px;
+ }
+
+ .container{
   margin-left: 10px;
   text-align: center;
  }
@@ -27,4 +31,12 @@
 
 .back_button{
   padding-right: 100px;
+}
+
+.table-divider{
+  border-bottom: 2px solid black; 
+}
+
+.container{
+  text-align: center;
 }

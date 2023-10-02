@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'letter_opener_web'
-gem 'bootstrap'
+gem 'bootstrap-sass'
 gem 'rails-i18n'
 gem 'devise-i18n-views'
 # Use Active Storage variant
