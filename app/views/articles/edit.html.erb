@@ -10,11 +10,13 @@
       <%= f.text_field :content, class:"form-control" %><br>
 
       <%= f.label :image %><br>
-      <%= f.file_field :image, class:"form-control"%><br>
+      <%= f.file_field :image%><br>
 
       <%= f.submit "作成", class: "btn btn-success"%>
     <% end %>
   </div>
 </div>
 </div>
-<%= link_to "戻る"%>
+
+<%= link_to "戻る",user_articles_path(@user), class:"back-btn"%>
+

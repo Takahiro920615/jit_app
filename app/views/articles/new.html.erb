@@ -1,20 +1,23 @@
 <div class = "container">
-<h1>投稿作成ページ</h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @article, url:user_articles_path, method: :post,  local: true, multipart: true) do |f|%>
-      <%= f.label :title %><br>
-      <%= f.text_field :title, class:"form-control"%><br>
+  <h1>投稿作成ページ</h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_with(model: @article, url:user_articles_path, method: :post,  local: true, multipart: true) do |f|%>
+        <%= f.label :title %><br>
+        <%= f.text_field :title, class:"form-control"%><br>
 
-      <%= f.label :content %><br>
-      <%= f.text_field :content, class:"form-control" %><br>
+        <%= f.label :content %><br>
+        <%= f.text_field :content, class:"form-control" %><br>
 
-      <%= f.label :image %><br>
-      <%= f.file_field :image, class:"form-control"%><br>
+        <%= f.label :image %><br>
+        <%= f.file_field :image%><br>
 
-      <%= f.submit "作成", class: "btn btn-success"%>
-    <% end %>
+        <%= f.submit "作成", class: "btn btn-success"%>
+      <% end %>
+    </div>
   </div>
 </div>
-</div>
-<%= link_to "戻る"%>
+
+<%= link_to "戻る",user_articles_path(@user), class:"back-btn"%>
+
+

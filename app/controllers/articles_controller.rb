@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @user = User.find(params[:user_id])
   end
 
   def create
