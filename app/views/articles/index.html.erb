@@ -11,7 +11,7 @@
       <th class="hedder-title">編集・削除</th>
     </tr>
   </thead>
-<% @articles.each do |article|%>
+<% @user.articles.each do |article|%>
   <tbody>
     <tr>
         <td><%= link_to "詳細表示", user_article_path(@user, article), class:"btn btn-success" %></td>

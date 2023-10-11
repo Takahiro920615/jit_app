@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-
+  before_action :authenticate_user!,only: [:create, :update]
+ 
   def new
     @article = Article.new
     @user = User.find(params[:user_id])
@@ -63,9 +64,15 @@ class ArticlesController < ApplicationController
 
   end
 
-  
+  private
   def article_params
     params.require(:article).permit(:title, :content, :image)
+  end
+
+  def authenticate_user!
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: "ログインしてください。"
+    end
   end
 
 end
